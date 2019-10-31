@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+<% include partials/nav %>
+
+<a class='addBtn btn btn--blue' id='add' href="#">ADD</a>
+
+<div class='list'>
+    <% motivations.forEach(function(data, i) { %>
+            <div class='listCard' tabindex='0'>
+                <div class='listCard--image' style='background-image: url(<%=data.image%>);'></div>
+                <form id='saveForm<%= i %>' class='listCard-form' action="/list/<%=data._id%>/?_method=PUT" method="POST">
+                    <div class='listCard-form-inputs'>
+                        <label>
+                            <span>Quote:</span>
+                            <input type='text' name="motivation[quote]" placeholder='quote' value='<%= data.quote %>'>
+                        </label>
+                        <label>
+                            <span>Image URL:</span>
+                            <input type='text' name="motivation[image]" placeholder='image url' value='<%= data.image %>'>
+                        </label>
+                    </div>
+                </form>
+                <div class='buttons'>
+                    <input class='saveBtn' type='submit' value='SAVE' form='saveForm<%= i %>' />
+                    <form class='deleteForm' action='/list/<%=data._id%>/?_method=DELETE' method='POST'>
+                        <button class='deleteBtn'>DELETE</button>
+                    </form>
+                </div>
+            </div>
+    <% }); %>
+</div>
+
+<div class="popup tc">
+    <h1 class='description'>Add A New Quote and Picture</h1>
+        <form class='form' action="/list" method="POST">
+            <input type="text" name="quote" placeholder="quote">
+            <input type="text" name="image" placeholder="image">
+            <button class='btn btn--white'>SUBMIT</button>
+        </form>
+    <a class="popup--close btn btn--blue" href="#">Close</a>
+</div>
+
+<% include partials/footer %>

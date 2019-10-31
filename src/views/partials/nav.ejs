@@ -1,0 +1,18 @@
+<div class='nav'>
+    <a class='nav-logo' href='/'>
+        <h1>MindRight</h1>
+    </a>
+
+    <div class='nav-right'>
+        <% if (currentUser) { %>
+            <a class='nav-btn' id='shuffle' href="#">Shuffle</a>
+            <a class='nav-btn' id='list' href="/list">View List</a>
+            <a class='nav-btn' id='defaultImages' href="/default-images">Default Images</a>
+            <p class='nav-right-username'>Logged in as: <%= currentUser.username %></p>
+            <a class='nav-right-logout' href='/logout'>Log Out</a>
+        <% } else { %>
+            <a class='nav-right-login' href='/login'>Login</a>
+            <a class='nav-right-signup' href='/signup'>Sign Up</a>
+        <% } %>
+    </div>
+</div>

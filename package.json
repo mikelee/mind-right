@@ -1,0 +1,30 @@
+{
+  "name": "mindright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-sass": "node-sass src/assets/stylesheets/sass/main.scss src/assets/stylesheets/css/main.css",
+    "watch-scss": "nodemon -e scss -x \"npm run compile-sass\"",
+    "dev": "npm run watch-scss & nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "author": "Mike Lee",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.7.7",
+    "mongoose-simple-random": "^0.4.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

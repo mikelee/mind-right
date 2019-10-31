@@ -1,0 +1,53 @@
+body {
+    background-color: $color-offblack;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    // text-shadow: rgba(40, 40, 40, .4) .1rem 0 1rem;
+    text-shadow: rgba(40, 40, 40, .6) .1rem 0 1rem;
+    padding-left: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text {
+    color: white;
+    text-align: center;
+    width: 85vw;
+    //rearranged button layout
+    margin: 10rem auto 1rem auto;
+    font-size: 7rem;
+    text-shadow: rgba(40, 40, 40, .6) .1rem 0 1rem;
+}
+
+.display {
+    //rearranged button layout
+    height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1452784444945-3f422708fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30%;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+//rearranged button layout
+// 
+// .gradient {
+//     position:absolute;
+//     z-index:2;
+//     right:0; bottom:0; left:0;
+//     height: 5vh;
+//     background: -moz-linear-gradient(top,  rgba($color-offblack,0) 0%, rgba($color-offblack,1) 80%);
+//     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($color-offblack,0)), color-stop(80%,rgba($color-offblack,1)));
+//     background: -webkit-linear-gradient(top,  rgba($color-offblack,0) 0%,rgba($color-offblack,1) 80%);
+//     background: -o-linear-gradient(top,  rgba($color-offblack,0) 0%,rgba($color-offblack,1) 80%);
+//     background: -ms-linear-gradient(top,  rgba($color-offblack,0) 0%,rgba($color-offblack,1) 80%);
+//     background: linear-gradient(to bottom,  rgba($color-offblack,0) 0%,rgba($color-offblack,1) 80%);
+// }

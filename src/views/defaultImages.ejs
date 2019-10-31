@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+<% include partials/nav %>
+
+<div>
+    <a class='addBtn btn btn--blue' id='addImage' href="#">ADD</a>
+</div>
+
+<div>
+    <% images.forEach(function(data, i) { %>
+            <div class='listCard' tabindex='0'>
+                <div class='listCard--image' style='background-image: url(<%=data.imageURL%>);'></div>
+                <form id='saveForm<%= i %>' class='listCard-form alt' action='/default-images/<%=data._id%>/?_method=PUT' method='POST'>
+                    <span>Image URL:</span>
+                    <input type='text' name='imageUrl[imageURL]' value='<%=data.imageURL%>'>
+                </form>
+                <div class='buttons'>
+                    <input class='saveBtn' type='submit' value='SAVE' form='saveForm<%= i %>' />
+                    <form class='deleteForm' action='/default-images/<%=data._id%>/?_method=DELETE' method='POST'>
+                        <button class='deleteBtn'>Delete</button>
+                    </form>
+                </div>
+            </div>
+    <% }); %>
+</div>
+
+<div class="popup popupImage tc">
+        <h1>Add New Quote or Picture</h1>
+            <form class='form' action="/default-images" method="POST">
+                <input type="text" name="image" placeholder="image URL">
+                <button class='btn btn--white'>Submit</button>
+            </form>
+        <a class="popup--close btn btn--blue" href="#">Close</a>
+    </div>
+
+<% include partials/footer %>

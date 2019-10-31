@@ -1,0 +1,359 @@
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Audiowide', cursive;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #fff; }
+
+.text {
+  font-family: 'Architects Daughter', cursive; }
+
+.tc {
+  text-align: center; }
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .4rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  font-size: 1.6rem; }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: .2rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--blue {
+    background-color: #336699;
+    color: #fff; }
+    .btn--blue::after {
+      background-color: #336699; }
+  .btn--nav {
+    background-color: transparent;
+    color: #fff;
+    border: #fff solid 0.2rem; }
+    .btn--nav::after {
+      background-color: #336699; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-size: .5rem;
+  color: #336699;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #336699;
+  transition: all .2s; }
+
+.btn-text:hover {
+  background-color: #336699;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn-text:active {
+  transform: translateY(0px);
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.listCard {
+  background-color: #336699;
+  border-radius: .1rem;
+  margin: 2rem;
+  height: 12rem;
+  color: #fff;
+  display: flex; }
+  .listCard:focus {
+    outline: none; }
+  .listCard:focus-within .saveBtn {
+    display: inline-block; }
+  .listCard:focus-within .deleteBtn {
+    display: inline-block; }
+  .listCard--image {
+    height: 100%;
+    width: 20%;
+    background-size: cover;
+    background-position: 30%;
+    margin-right: 3%; }
+  .listCard-form {
+    color: #fff;
+    display: inline-block;
+    width: 62%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-top: 1rem; }
+    .listCard-form.alt {
+      display: flex;
+      align-items: center; }
+    .listCard-form--inputs {
+      display: inline-block; }
+    .listCard-form label {
+      display: block;
+      margin-top: 1rem; }
+    .listCard-form input[type="text"] {
+      color: #fff;
+      font-size: 1.8rem;
+      background: transparent;
+      width: 80%;
+      border: none;
+      border-bottom: .1rem solid #5ADBFF; }
+      .listCard-form input[type="text"]:focus {
+        outline: none; }
+      .listCard-form input[type="text"]::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #5ADBFF; }
+      .listCard-form input[type="text"]:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #5ADBFF;
+        opacity: 1; }
+      .listCard-form input[type="text"]::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #5ADBFF;
+        opacity: 1; }
+      .listCard-form input[type="text"]:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #5ADBFF; }
+      .listCard-form input[type="text"]::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #5ADBFF; }
+      .listCard-form input[type="text"]::placeholder {
+        /* Most modern browsers support this now. */
+        color: #5ADBFF; }
+    .listCard-form span {
+      float: left;
+      width: 15rem;
+      font-size: 2rem; }
+  .listCard .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 15%; }
+    .listCard .buttons .saveBtn {
+      color: white;
+      background-color: #4bb8d6;
+      padding: .5rem;
+      border: none;
+      border-radius: 10rem;
+      height: 2.5rem;
+      width: 13rem;
+      margin-bottom: 2rem; }
+      .listCard .buttons .saveBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+      .listCard .buttons .saveBtn:active {
+        transform: translateY(0px);
+        box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+      .listCard .buttons .saveBtn:focus {
+        outline: none; }
+    .listCard .buttons .deleteForm .deleteBtn {
+      color: white;
+      background-color: #912f2f;
+      padding: .5rem;
+      border: none;
+      border-radius: 10rem;
+      height: 2.5rem;
+      width: 13rem; }
+      .listCard .buttons .deleteForm .deleteBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+      .listCard .buttons .deleteForm .deleteBtn:active {
+        transform: translateY(0px);
+        box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+      .listCard .buttons .deleteForm .deleteBtn:focus {
+        outline: none; }
+
+.saveBtn {
+  display: none; }
+
+.deleteBtn {
+  display: none; }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 15vh auto auto 10vw;
+  width: 50rem; }
+  .login-form .login-input {
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    margin: .5rem 0; }
+    .login-form .login-input:focus {
+      outline: none; }
+  .login-form button {
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: .5rem;
+    font-size: 2rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 1rem;
+    background-color: #336699;
+    color: white;
+    width: 40%;
+    align-self: center; }
+    .login-form button:focus {
+      outline: none; }
+
+.message:before {
+  content: "\200b"; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 2rem;
+  text-shadow: rgba(40, 40, 40, 0.6) 0.1rem 0 1rem;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px); }
+  .nav-btn {
+    color: #fff;
+    padding: 0 2rem; }
+  .nav-forms {
+    display: flex;
+    justify-content: flex-start; }
+    .nav-forms-type {
+      margin: auto 3rem; }
+  .nav-right {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    color: #fff; }
+    .nav-right-username {
+      margin-right: 2rem;
+      margin-left: 2rem;
+      color: #336699; }
+    .nav-right-logout {
+      align-self: flex-end;
+      margin-right: 3rem;
+      color: #fff; }
+    .nav-right-login {
+      margin-right: 3rem;
+      color: #fff; }
+    .nav-right-signup {
+      align-self: flex-end;
+      align-content: center;
+      margin-right: 3rem;
+      color: #fff; }
+
+.popup {
+  visibility: hidden;
+  background-color: #e3e5e6;
+  z-index: 2;
+  position: absolute;
+  top: 20vh;
+  left: calc(50vw - 33vw);
+  height: 70vh;
+  width: 66vw;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; }
+  .popup .description {
+    margin: 2rem auto; }
+  .popup .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    width: 70%;
+    margin-bottom: 6rem; }
+    .popup .form input[type='text'] {
+      font-size: 1.6rem;
+      background-color: transparent;
+      border: none;
+      border-bottom: #336699 0.1rem solid;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      margin-bottom: 1rem; }
+      .popup .form input[type='text']:focus {
+        outline: none; }
+    .popup .form button {
+      margin-top: 2rem;
+      color: #336699;
+      border: none; }
+      .popup .form button:focus {
+        outline: none; }
+  .popup--close {
+    width: 14rem;
+    justify-self: flex-end;
+    margin-bottom: 1rem; }
+
+.addBtn {
+  margin-top: 2rem;
+  margin-left: 2rem; }
+
+body {
+  background-color: #1c1e26; }
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: rgba(40, 40, 40, 0.6) 0.1rem 0 1rem;
+  padding-left: 1rem; }
+
+a {
+  text-decoration: none; }
+
+.text {
+  color: white;
+  text-align: center;
+  width: 85vw;
+  margin: 10rem auto 1rem auto;
+  font-size: 7rem;
+  text-shadow: rgba(40, 40, 40, 0.6) 0.1rem 0 1rem; }
+
+.display {
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1452784444945-3f422708fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  overflow: hidden; }
+
+.container {
+  position: relative; }

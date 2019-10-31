@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class="container">
+    <% if (randomItem.image !== '') { %>
+    <div class="display" style="background-image: url(<%=randomItem.image%>)">
+    <% } else { %>
+    <div class="display" style="background-image: url(https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    <% } %>
+
+    <% include partials/nav %>
+    
+        <% if (randomItem.quote !== '') { %>
+        <p class="text"> <%= randomItem.quote %> </p>
+        <% } %>
+    </div>
+    </div>
+    <div class="popup tc">
+        <h1>Add New Quote or Picture</h1>
+
+        <div class="container">
+            <form action="/" method="POST">
+                <input type="text" name="quote" placeholder="quote">
+                <input type="text" name="image" placeholder="image">
+                <button>Submit</button>
+            </form>
+        </div>
+
+        <a class="popup--close btn btn--blue" href="#">Close</a>
+    </div>
+</div>
+
+<% include partials/footer %>

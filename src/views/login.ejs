@@ -1,0 +1,16 @@
+<% include partials/header %>
+
+<div class='nav nav-forms'>
+    <a class='nav-logo' href='/'>
+        <h1>MindRight</h1>
+    </a>
+    <h3 class='nav-forms-type'>Login</h3>
+</div>
+
+<form class='login-form' action='/login' method='POST'>
+    <input class='login-input' type='text' name='username' placeholder='username'>
+    <input class='login-input' type='password' name='password' placeholder='password'>
+    <button class='btn'>Login</button>
+</form>
+
+<% include partials/footer %>

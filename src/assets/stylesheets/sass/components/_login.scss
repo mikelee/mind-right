@@ -1,0 +1,41 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 15vh auto auto 10vw;
+    width: 50rem;
+
+    & .login-input {
+        font-size: 2rem;
+        border-radius: 1rem;
+        padding: .5rem 1rem;
+        margin: .5rem 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    & button {
+        font-size: 2rem;
+        border-radius: 1rem;
+        padding: .5rem;
+        font-size: 2rem;
+        margin: 1rem 0;
+        border: none;
+        border-radius: 1rem;
+        background-color: $color-primary;
+        color: white;
+        width: 40%;
+        align-self: center;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.message {
+    &:before {
+        content: "\200b"; // unicode zero width space character
+      }
+}

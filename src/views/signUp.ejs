@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class='nav nav-forms'>
+    <a class='nav-logo' href='/'>
+        <h1>MindRight</h1>
+    </a>
+    <h3 class='nav-forms-type'>Sign Up</h3>
+</div>
+
+
+<p class='message'>
+    <% if (locals.message) { %>
+        <%= message %>
+    <% } %>
+</p>
+
+<form class='login-form' action="/signup" method="POST">
+    <input class='login-input' type="text" name="username" placeholder="username">
+    <input class='login-input' type="password" name="password" placeholder="password">
+    <button class='btn'>Sign Up</button>
+</form>
+
+<% include ./partials/footer %>

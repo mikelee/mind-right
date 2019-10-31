@@ -1,0 +1,55 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 1rem 2rem;
+    text-shadow: rgba(40, 40, 40, .6) .1rem 0 1rem;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, .1);  
+    backdrop-filter: blur(5px);
+
+    &-btn {
+        color: $color-white;
+        padding: 0 2rem;
+    }
+
+    &-forms {
+        display: flex;
+        justify-content: flex-start;
+
+        &-type {
+            margin: auto 3rem;
+        }
+    }
+
+    &-right {
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        color: $color-white;
+
+        &-username {
+            margin-right: 2rem;
+            margin-left: 2rem;
+            color: $color-primary;
+        }
+
+        &-logout {
+            align-self: flex-end;
+            margin-right: 3rem;
+            color: $color-white;
+        }
+
+        &-login {
+            margin-right: 3rem;
+            color: $color-white;
+        }
+
+        &-signup {
+            align-self: flex-end;
+            align-content: center;
+            margin-right: 3rem;
+            color: $color-white;
+        }
+    }
+}
