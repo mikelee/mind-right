@@ -14,6 +14,7 @@ const express = require('express'),
 
 const url = 'mongodb+srv://mike:mindrightpass@cluster0-trcek.mongodb.net/test?retryWrites=true&w=majority';
 
+mongoose.set('useUnifiedTopology', true);
 // mongoose.connect('mongodb://localhost:27017/hypeman', { useNewUrlParser: true });
 mongoose.connect('mongodb+srv://mike:mindrightpass@cluster0-trcek.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
 .then(data => data);
@@ -29,7 +30,7 @@ const MongoClient = require('mongodb').MongoClient;
 // const url = 'mongodb://localhost:27017/hypeman';
 
 // Use connect method to connect to the Server
-MongoClient.connect(url, { useNewUrlParser: true });
+MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
 
 
