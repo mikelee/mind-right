@@ -15,8 +15,6 @@ const list = document.querySelector('.list');
 
 
 const shuffleDisplay = () => {
-    // const regex = '\\b' + 'url(' + '\\b'
-
     fetch('http://localhost:7777/result')
     .then(response => response.json())
     .then(data => {
@@ -62,34 +60,3 @@ if (addImageBtn) {
         console.log('clicked');
     });
 }
-
-// if (list) {
-//     list.addEventListener('mouseover', (el) => {
-//         const parent = el.target.closest('.listCard');
-//         let childSaveBtn = parent.querySelector('.saveBtn');
-//         let childDeleteBtn = parent.querySelector('.deleteBtn');
-//         childSaveBtn.style.display = 'inline-block';
-//         childDeleteBtn.style.display = 'inline-block';
-//     });
-
-//     list.addEventListener('mouseout', (el) => {
-//         const parent = el.target.closest('.listCard');
-//         let childSaveBtn = parent.querySelector('.saveBtn');
-//         let childDeleteBtn = parent.querySelector('.deleteBtn');
-//         childSaveBtn.style.display = 'none';
-//         childDeleteBtn.style.display = 'none';
-//     });
-// }
-
-// if (textInput) {
-//     textInput.forEach(input => input.addEventListener('focus', function() {
-//         console.log('in focus');
-//         saveBtn.forEach(button => button.style.display= 'block');
-//         // saveBtn.style.display = 'block';
-//     }));
-
-    // textInput.addEventListener('focus', function() {
-    //     console.log('in focus');
-    //     saveBtn.style.display = 'block';
-    // });
-// }
