@@ -8,16 +8,14 @@ const express = require('express'),
     User = require('./models/user'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
-    middleware = require('./middleware')
-    
+    middleware = require('./middleware');
     
 
 const url = 'mongodb+srv://mike:mindrightpass@cluster0-trcek.mongodb.net/test?retryWrites=true&w=majority';
-
 mongoose.set('useUnifiedTopology', true);
-// mongoose.connect('mongodb://localhost:27017/hypeman', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://mike:mindrightpass@cluster0-trcek.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect(url, { useNewUrlParser: true })
 .then(data => data);
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -26,10 +24,7 @@ app.use(methodOverride('_method'));
 
 const MongoClient = require('mongodb').MongoClient;
 
-// Connection URL
-// const url = 'mongodb://localhost:27017/hypeman';
-
-// Use connect method to connect to the Server
+// Connect to server
 MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true });
 
 
