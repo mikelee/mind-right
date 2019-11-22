@@ -55,7 +55,6 @@ app.get('/result', function(req, res) {
     if (user != undefined) {
         let onlyUser = {"owner.username": user.username};
         Motivation.findOneRandom(onlyUser, function(err, result) {
-            console.log(result);
             if (err) {
                 console.log(err);
             } else {
@@ -72,21 +71,27 @@ app.get('/result', function(req, res) {
 app.get('/', function(req, res){
     const user = req.user;
 
-    const seed = {
-        quote: 'Login and get it!',
-        image: 'https://images.unsplash.com/photo-1497561813398-8fcc7a37b567?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-        }
     if (user) {
         let onlyUser = {"owner.username": user.username};
         Motivation.findOneRandom(onlyUser, function(err, result) {
-            if (!err) {
-                console.log(result);
+            if (result) {
                 res.render('home', { randomItem: result, currentUser: req.user });
+            } else if (!result){
+                const noMotivationSeed = {
+                    quote: 'Add some motivational quotes!',
+                    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+                }
+                res.render('home', { randomItem: noMotivationSeed, currentUser: req.user });
+            } else if (err) {
+                console.log(err);
             }
         });
     } else {
-        console.log('nobody is logged in');
-        res.render('home', { randomItem: seed, currentUser: req.user });
+        const noUserSeed = {
+            quote: 'Login and get it!',
+            image: 'https://images.unsplash.com/photo-1497561813398-8fcc7a37b567?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+        }
+        res.render('home', { randomItem: noUserSeed, currentUser: req.user });
     }
 });
 
@@ -155,8 +160,6 @@ app.post('/list', function(req, res){
         newImage = req.body.image;
 
         let newMotivation = {quote: newQuote, image: newImage, owner: user};
-        console.log(req.user);
-
 
         Motivation.create(newMotivation, function(err, newMotiv){
             if (err){
@@ -167,13 +170,18 @@ app.post('/list', function(req, res){
             }
         });
     } else {
-        Image.findOneRandom(function(err, res) {
-            if (!err) {
-                newImage = res.imageURL;
-                console.log(newImage);
+        const onlyUser = {"owner.username": user.username};
+
+        Image.findOneRandom(onlyUser, function(err, result) {
+            if (result) {
+                newImage = result.imageURL;
+            } else if (!result) {
+                newImage = '';
+            } else if (err) {
+                console.log(err);
             }
-            let newMotivation = {quote: newQuote, image: newImage, owner: user};
-            console.log(newMotivation);
+
+            const newMotivation = {quote: newQuote, image: newImage, owner: user};
 
             Motivation.create(newMotivation, function(err, newMotiv){
                 if (err){
