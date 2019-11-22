@@ -21,7 +21,7 @@ const shuffleDisplay = () => {
         if (data.randomItem.image !== '') {
             display.style.backgroundImage = `url(${data.randomItem.image})`;
         } else {
-            display.style.backgroundImage = 'url(https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)';
+            display.style.backgroundImage = 'url(https://images.unsplash.com/photo-1452784444945-3f422708fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80)';
         }
         
         if (data.randomItem.quote !== '') {
