@@ -75,13 +75,13 @@ app.get('/', function(req, res){
         let onlyUser = {"owner.username": user.username};
         Motivation.findOneRandom(onlyUser, function(err, result) {
             if (result) {
-                res.render('home', { randomItem: result, currentUser: req.user });
+                res.render('home', { randomItem: result, currentUser: req.user, shuffle: true });
             } else if (!result){
                 const noMotivationSeed = {
                     quote: 'Add some motivational quotes!',
                     image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
                 }
-                res.render('home', { randomItem: noMotivationSeed, currentUser: req.user });
+                res.render('home', { randomItem: noMotivationSeed, currentUser: req.user, shuffle: true });
             } else if (err) {
                 console.log(err);
             }
@@ -91,7 +91,7 @@ app.get('/', function(req, res){
             quote: 'Login and get it!',
             image: 'https://images.unsplash.com/photo-1497561813398-8fcc7a37b567?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
         }
-        res.render('home', { randomItem: noUserSeed, currentUser: req.user });
+        res.render('home', { randomItem: noUserSeed, currentUser: req.user, shuffle: true });
     }
 });
 

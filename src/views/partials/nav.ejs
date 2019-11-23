@@ -5,7 +5,9 @@
 
     <div class='nav-right'>
         <% if (currentUser) { %>
+            <% if (typeof shuffle !== 'undefined') { %>
             <a class='nav-btn' id='shuffle' href="#">Shuffle</a>
+            <% } %>
             <a class='nav-btn' id='list' href="/list">View List</a>
             <a class='nav-btn' id='defaultImages' href="/default-images">Default Images</a>
             <p class='nav-right-username'>Logged in as: <%= currentUser.username %></p>
